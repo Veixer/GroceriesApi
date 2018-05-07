@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Groceries</title>
+	<link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<h1>Groceries list</h1>
+	<span>Add</span>
+	<form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+		<input type="text" id="add-name" placeholder="Name"/>
+		<input type="text" id="add-size" placeholder="Size"/>
+		<input type="number" id="add-amount" placeholder="Amount" min="0" max="99999"/>
+		<input type="submit" value="Add" />
+	</form>
+	
+	<div id="edit-div">
+		<span>Edit</span>
+		<form class="edit-form">
+			<input type="hidden" id="edit-id"/>
+			<input type="text" id="edit-name" />
+			<input type="text" id="edit-size" />
+			<input type="number" id="edit-amount" />
+			<input type="submit" id="Edit"/>
+			<a onclick="closeInput()" aria-label="Close">&#10006;</a>
+		</form>
+	</div>
+
+	<p id="groceryCounter"></p>
+
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Size</th>
+			<th>Amount</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tbody id="groceries"></tbody>
+	</table>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
